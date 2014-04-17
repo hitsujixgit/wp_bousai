@@ -1,0 +1,532 @@
+/*
+Theme Name: WP-theme chapter 3.0
+Theme URI: http://wordpress.hitsuji.me/category/lessons/03-practical-theme/
+Author: Tae
+Author URI: http://hitsuji.me/
+Description: This theme for bousai-goods website.
+Version: 1.1
+*/
+
+/* _/ _/ _/ _/ _/ _/ _/ _/ _/ _/ _/ _/ _/ _/ _/ _/ _/ _/ _/ _
+　Common Settings
+_/ _/ _/ _/ _/ _/ _/ _/ _/ _/ _/ _/ _/ _/ _/ _/ _/ _/ _/ _*/
+
+/*============================================================
+ body
+============================================================*/
+html,body {
+    height: 100%;
+}
+body {
+    font-family: 'Lucida Grande','Hiragino Kaku Gothic ProN', Meiryo, sans-serif;
+    color: #000000;
+    font-size: 16px;
+    line-height: 1.6em;
+    background-color: #fff;
+    min-width: 320px;
+    background: url(img/wall_1x.png) repeat;
+    background: -webkit-image-set( url(img/wall_1x.png) 1x, url(img/wall_2x.png) 2x ) repeat;
+}
+a {
+    color: #777777;
+    text-decoration: underline;
+}
+a:hover {
+    color: #919191;
+    text-decoration: none;
+}
+a:active, a:focus {
+    outline: 0;
+}
+#container {
+    margin: 0;
+    padding: 10px 0;
+    background-color: #fff;
+    box-shadow: 0px 0px 5px 3px #ddd;
+    height: 100%;
+    min-height: 100%;
+}
+body > #container {
+    height: auto;
+}
+#content {
+    padding: 0 10px;
+    text-align: center;
+}
+#main {
+    text-align: left;
+}
+
+/*============================================================
+ ヘッダーのスタイル
+============================================================*/
+#header {
+    margin: 0 10px;
+    text-align: center;
+}
+#header h1#site-title {
+    display: inline-block;
+    overflow: hidden;
+    font-size: 1.3em;
+    line-height: 32px;
+    padding: 10px 0;
+}
+#header h1#site-title a#site-title-link {
+    text-decoration: none;
+    color: #414141;
+    font-weight: bold;
+    float: left;
+    margin-right: 12px;
+}
+#header p#site-description {
+    font-size: 0.8em;
+    line-height: 1.6em;
+    margin: 0;
+}
+
+/*============================================================
+ メインメニュー
+============================================================*/
+.open {
+    display: block;
+    float: left;
+    width: 40px;
+    height: 30px;
+    background: url(img/menu_1x.png) center center no-repeat;
+    background: -webkit-image-set( url(img/menu_1x.png) 1x, url(img/menu_2x.png) 2x ) center center no-repeat;
+    -moz-border-radius: 8px;
+    -webkit-border-radius: 8px;
+    border-radius: 8px;
+    text-indent: -999999px;
+}
+#nav {
+    display: none;
+}
+#pageslide #nav li {
+    padding: 10px 0;
+    border-bottom: 1px solid #666666;
+}
+#pageslide #nav li a {
+    color: #fff;
+    border: none;
+    text-decoration: none;
+}
+#pageslide #nav li a:hover {
+    text-decoration: underline;
+}
+
+/*============================================================
+ 投稿のスタイル
+============================================================*/
+article.post {
+    
+}
+article.post h2.post-title {
+    font-size: 1.2em;
+    margin: 10px 0;
+    padding: 8px 0 8px 8px;
+    color: #fff;
+    background-color: #1E90FF;
+    border-radius: 5px;
+    box-shadow: 1px 1px 3px rgba(0,0,0,.2); /*B0C4DE*/
+}
+article.post p.post-meta {
+    text-align: right;
+    padding-bottom: 10px;
+    font-weight: bold;
+    font-size: 0.8em;
+    color: #777;
+    font-family: Georgia, "Times New Roman", Times, serif;
+}
+article.post div.post-content {
+    padding: 0.5em 0;
+}
+article.post div.post-content p {
+    margin: 0.5em 0;
+}
+article.post div.post-content h3 {
+    font-size: 1.3em;
+    margin: 8px;
+    padding: 8px 0;
+    color: #1E90FF;
+    font-weight: normal;
+}
+article.post div.post-content h4 {
+    font-size: 1.15em;
+    margin: 8px 0;
+    padding: 3px 0.5em;
+    color: #414141;
+    font-weight: normal;
+}
+article.post div.post-content p {
+    margin: 0.5em 0;
+    width: 100%;
+}
+article.post div.post-content p img {
+    max-width: 100%;
+    height: auto;
+}
+article.post div.post-content img.aligncenter {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+article.post div.post-content img.alignright {
+    padding: 4px;
+    margin: 0 0 2px 7px;
+    display: inline;
+}
+article.post div.post-content img.alignleft {
+    padding: 4px;
+    margin: 0 7px 2px 0;
+    display: inline;
+}
+article.post div.post-content .alignright {
+    float: right;
+}
+article.post div.post-content .alignleft {
+    float: left;
+}
+
+/*============================================================
+ ページネーションのスタイル
+============================================================*/
+#pagination {
+    font-size: 0.85em;
+}
+ul#pagination {
+    overflow: hidden;
+}
+ul#pagination.single li.prev,
+ul#pagination.pages li.next {
+    float: right;
+}
+ul#pagination.single li.prev a,
+ul#pagination.pages li.next a {
+    padding:0 20px 0 0;
+    text-decoration:none;
+    background: url(img/arrow_right_1x.png) no-repeat 100% 50%;
+    background: -webkit-image-set( url(img/arrow_right_1x.png) 1x, url(img/arrow_right_2x.png) 2x ) no-repeat 100% 50%;
+}
+ul#pagination.single li.next, 
+ul#pagination.pages li.prev {
+    float: left;
+}
+ul#pagination.single li.next a, 
+ul#pagination.pages li.prev a {
+    padding:0 0 0 20px;
+    text-decoration: none;
+    background:url(img/arrow_left_1x.png) no-repeat 0px 50%;
+    background: -webkit-image-set( url(img/arrow_left_1x.png) 1x, url(img/arrow_left_2x.png) 2x ) no-repeat 0px 50%;
+}
+
+
+/*============================================================
+ 抜粋表示のスタイル
+============================================================*/
+article.post article.post-excerpt {
+    margin-bottom: 32px;
+}
+article.post article.post-excerpt h3.post-title {
+    font-size: 1.1em;
+    margin: 8px 8px 0 8px;
+    padding: 8px 0 0 0;
+    font-weight: normal;
+}
+article.post article.post-excerpt p.post-meta {
+    padding-bottom: 0;
+    margin-left: 1em;
+    text-align: left;
+}
+article.post article.post-excerpt h3.post-title a {
+    color: #1E90FF;
+}
+article.post article.post-excerpt img {
+    float: left;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+article.post article.post-excerpt div.post-content {
+    overflow: hidden;
+    font-size: 0.9em;
+}
+article.post article.post-excerpt .terms {
+    font-size: 0.8em;
+}
+article.post article.post-excerpt .terms a {
+    color: #0000CD;
+    text-decoration: none;
+}
+
+/*============================================================
+ トップページのBoxのスタイル
+============================================================*/
+#frontpage-image {
+    display: none;
+}
+article.post .post-description {
+    padding: 0;
+}
+.boxes-container {
+    overflow: hidden;
+    margin: 8px 0;
+}
+.box-wrapper {
+    margin: 0 0 10px 0;
+    padding: 0;
+}
+.box-wrapper .box {
+    position: relative;
+    z-index: 0;
+    overflow: hidden;
+    padding: 10px;
+    margin: 0;
+    background-color: #F8F8FF;
+    border-radius: 3px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgba(0,0,0,.1);
+    box-shadow: -1px 1px 0 rgba(0, 0, 0, .1), inset -1px 1px 0 rgba(255, 255, 255, .5) ;
+}
+.box:active {
+    box-shadow: -1px 1px 0 rgba(255, 255, 255, .8), inset -1px 1px 2px rgba(0, 0, 0, .05);
+}
+a.box-link {
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 1;
+    text-indent: -999999px;
+}
+.box h3 {
+    font-size: 1.1em;
+    font-weight: normal;
+    padding: 0.5em 0;
+    margin-bottom: 10px;
+    color: #B22222;
+}
+.box h3 a {
+    color: #fff;
+    text-decoration: none;
+}
+.box p {
+    font-size: 1em;
+}
+.box img {
+    float: left;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+/*============================================================
+ サイドバーのスタイル
+============================================================*/
+#sidebar {
+    text-align: left;
+}
+#sidebar .widget-title {
+    font-size: 1em;
+    font-weight: normal;
+    color: #414141;
+    background-color: #F0F8FF;
+    margin-top: 16px;
+    margin-bottom: 8px;
+    padding: 0.2em 0 0.2em 0.5em;
+    border-radius: 3px;
+    box-shadow: 1px 1px 3px rgba(0,0,0,.2);
+}
+
+#sidebar ul{
+    margin:0 6px 25px;
+    font-size: 0.9em;
+}
+
+#sidebar ul li{
+    list-style:none;
+    margin-bottom:10px;
+    padding-bottom:2px;
+    border-bottom:1px dotted #556B2F;
+}
+
+#sidebar ul li a {
+    display:block;
+    padding:0 3px 0 20px;
+    text-decoration:none;
+    background: url(img/arrow_right_1x.png) no-repeat 0 50%;
+    background: -webkit-image-set( url(img/arrow_right_1x.png) 1x, url(img/arrow_right_2x.png) 2x ) no-repeat 0 50%;
+}
+
+#sidebar ul li a:hover{
+    background-position: 3px 50%;
+}
+
+/*============================================================
+ ホームへのリンンクスタイル
+============================================================*/
+p.home-link a {
+    background: url(img/home_button_1x.png) no-repeat left center;
+    background: -webkit-image-set( url(img/home_button_1x.png) 1x, url(img/home_button_2x.png) 2x ) no-repeat left center;
+    padding-left: 20px;
+}
+p.top-home-link {
+    text-align: left;
+}
+p.bottom-home-link {
+    text-align: center;
+    margin: 0.5em 0;
+}
+
+/*============================================================
+ フッターのスタイル
+============================================================*/
+
+a#pagetopBtn img {
+    position: fixed;
+    bottom: 10px;
+    right: 1px;
+}
+#footer {
+    border-top: 1px dashed #007DC6;
+    text-align: center;
+    line-height: 1em;
+    padding: 1em 0;
+    margin: 20px 10px 0 10px;
+}
+#footer small {
+    font-size: 0.75em;
+}
+/* _/ _/ _/ _/ _/ _/ _/ _/ _/ _/ _/ _/ _/ _/ _/ _/ _/ _/ _/ _
+　for iphone landscape
+_/ _/ _/ _/ _/ _/ _/ _/ _/ _/ _/ _/ _/ _/ _/ _/ _/ _/ _/ _*/
+@media only screen and (min-width: 480px) {
+    #header h1#site-title {
+        font-size: 1.6em;
+        line-height: 30px;
+    }
+    #header p#site-description {
+        font-size: 0.8em;
+    }
+    
+}
+/* _/ _/ _/ _/ _/ _/ _/ _/ _/ _/ _/ _/ _/ _/ _/ _/ _/ _/ _/ _
+　for large tablets (show 2 boxes a line on the front page)
+_/ _/ _/ _/ _/ _/ _/ _/ _/ _/ _/ _/ _/ _/ _/ _/ _/ _/ _/ _*/
+@media only screen and (min-width: 715px) {
+    /* メインメニューを通常のスタイルで表示する */
+    #header h1#site-title a#site-title-link {
+        float: none;
+        margin-right: 0;
+    }
+    .open {
+        display: none;
+    }
+    #nav {
+        display: inline-block;
+        overflow: hidden;
+        margin-top: 16px;
+    }
+    #nav li {
+        float: left;
+        margin-right: 1.6em;
+    }
+    #nav li a {
+        display: block;
+        text-decoration: none;
+        color: #333;
+        padding: 3px;
+    }
+    #nav li a:hover {
+        background-color: #B0E0E6;
+    }
+    /* トップページのBOXを変更する */
+   #frontpage-image {
+       display: inline;
+       width: 100%;
+       height: auto;
+       max-width: 900px;
+       margin-left: auto;
+       margin-right: auto;
+   }
+   .boxes-container {
+        width: 100%;
+        margin: 10px auto;
+    }
+    .box-wrapper {
+        float: left;
+        width: 50%;
+        border: none;
+        margin: 0;
+    }
+    .box-wrapper .box {
+        border-color: rgba(0,0,0,.1);
+        border-width: 1px;
+        border-style: none;
+    }
+    .box-wrapper .box:hover {
+        background-color: #B0E0E6;
+    }
+    .box-wrapper:nth-child(1) .box {
+        border-style: solid;
+        border-radius: 5px 0 0 0;
+    }
+    .box-wrapper:nth-child(2) .box {
+        border-top-style: solid;
+        border-right-style: solid;
+        border-bottom-style: solid;
+        border-radius: 0 5px 0 0;
+    }
+    .box-wrapper:nth-child(3) .box {
+        border-left-style: solid;
+        border-right-style: solid;
+        border-bottom-style: solid;
+        border-radius: 0 0 0 5px;
+    }
+    .box-wrapper:nth-child(4) .box {
+        border-right-style: solid;
+        border-bottom-style: solid;
+        border-radius: 0 0 5px 0;
+    }
+}
+/* _/ _/ _/ _/ _/ _/ _/ _/ _/ _/ _/ _/ _/ _/ _/ _/ _/ _/ _/ _
+　for PC (show 2 boxes a line on the front page, double columns)
+_/ _/ _/ _/ _/ _/ _/ _/ _/ _/ _/ _/ _/ _/ _/ _/ _/ _/ _/ _*/
+@media only screen and (min-width: 885px) {
+    #container {
+        padding: 20px 0;
+    }
+    #content {
+        overflow: hidden;
+    }
+    #main {
+        float: left;
+        width: 695px;
+        margin-top: 1em;
+    }
+    .boxes-container {
+        width: 695px;
+        margin: 0;
+    }
+    #sidebar {
+        overflow: hidden;
+        padding-left: 16px;
+        padding-top: 1em;
+    }
+    #sidebar .widget-title {
+        width: 93%;
+    }
+    #footer {
+        
+    }
+}
+/* _/ _/ _/ _/ _/ _/ _/ _/ _/ _/ _/ _/ _/ _/ _/ _/ _/ _/ _/ _
+　for PC (center justification)
+_/ _/ _/ _/ _/ _/ _/ _/ _/ _/ _/ _/ _/ _/ _/ _/ _/ _/ _/ _*/
+@media only screen and (min-width: 945px) {
+    #container {
+        width: 925px;
+        margin-right: auto;
+        margin-left: auto;
+    }
+}
