@@ -25,5 +25,12 @@
 		<a href="<?php echo $link ?>"><img src="<?php echo $img_src ?>" width="<?php echo $width ?>" height="<?php echo $height ?>" /></a>
 		<p><?php echo wp_trim_excerpt() ?></p>
 	</div>
-	<span class="terms"><?php echo get_the_term_list($post->ID, array('category','post_tag'),'',', ',''); ?></span>
+	<span class="terms"><?php 
+		$myterms = array();
+		$terms1 = get_the_term_list($post->ID, 'post_tag','',', ','');
+		$terms2 = get_the_term_list($post->ID, 'category','',', ','');
+		if($terms1) array_push($myterms, $terms1);
+		if($terms2) array_push($myterms, $terms2);
+		echo implode(', ', $myterms);
+	?></span>
 </article><!-- post -->
