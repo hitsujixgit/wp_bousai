@@ -33,9 +33,18 @@ if( !function_exists('my_custom_image_sizes') ) {
 }
 
 // Fullサイズと等しい場合は、画像サイズ選択メニューに高解像度用画像サイズを追加する
+// きちんと作る場合は、widthやheightなどのkey存在確認したほうがいいです。
 add_filter( 'wp_prepare_attachment_for_js', 'add_imagesize_for_js_preparation');
 if( !function_exists('add_imagesize_for_js_preparation') ) {
 	function add_imagesize_for_js_preparation($response) {
+		
+		foreach ($response['sizes'] as $size => $values) {
+			if( in_array($size, array('thumbnail_for_2x','medium_for_2x','large_for_2x')) ) {
+				$response['sizes'][$size]['width'] = floor($response['sizes'][$size]['width'] / 2);
+				$response['sizes'][$size]['height'] = floor($response['sizes'][$size]['height'] / 2);
+			}
+		}
+		
 		$full_max = max($response['sizes']['full']['width'], $response['sizes']['full']['height']);
 		$key = '';
 		switch ($full_max) {
