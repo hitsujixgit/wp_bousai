@@ -83,7 +83,7 @@ if( !function_exists('change_imagesize_tohalf') ) {
 				$val = floor($m['value'] / 2);
 				$html = $m['before'].$val.$m['after'];
 			}
-			if(preg_match('/^(?<before>.*height=["\'])(?<value>[\d]+)(?<after>["\']).*$/', $html, $m)) {
+			if(preg_match('/^(?<before>.*height=["\'])(?<value>[\d]+)(?<after>["\'].*)$/', $html, $m)) {
 				$val = floor($m['value'] / 2);
 				$html = $m['before'].$val.$m['after'];
 			}
