@@ -1,4 +1,8 @@
-<?php get_header(); ?>
+<?php 
+/*
+ Template Name: Front page with 4 categories
+*/
+get_header(); ?>
 <!-- メイン -->
 <div id="content">
 	<img id="frontpage-image" src="<?php echo get_template_directory_uri() ?>/img/sky_2x.jpg" width="900" height="200" />
