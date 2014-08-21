@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/reset.css" type="text/css" />
 <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/jquery.pageslide.css" type="text/css" />
+<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/jquery.bxslider.css" type="text/css" />
 <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css" />
 <title><?php bloginfo('name'); ?><?php wp_title(); ?></title>
 <?php wp_head(); ?>

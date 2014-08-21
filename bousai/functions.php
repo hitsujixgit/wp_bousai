@@ -2,6 +2,15 @@
 //カスタムメニューを1つ設置する
 register_nav_menu('mainmenu', 'メインメニュー');
 
+// カスタムヘッダーを有効にする
+$custom_header_defaults = array(
+		'default-image'          => get_bloginfo('template_url').'/img/sky_2x.jpg',
+		'width'                  => 1800,
+		'height'                 => 400,
+		'header-text'            => false,	//ヘッダー画像上にテキストをかぶせる
+);
+add_theme_support( 'custom-header', $custom_header_defaults );
+
 // ウィジェットを設置する
 register_sidebar(
 	array(
@@ -159,6 +168,8 @@ if( !function_exists('myJavaScript_head') ) {
 		wp_enqueue_script('jquery');
 		wp_enqueue_script('pageslide', get_bloginfo('template_url'). '/js/jquery.pageslide.min.js', array('jquery'), false, true);
 		wp_enqueue_script('mypageslide', get_bloginfo('template_url'). '/js/myPageslide.js', array('jquery'), false ,true);
+		wp_enqueue_script('bxslider', get_bloginfo('template_url'). '/js/jquery.bxslider.min.js', array('jquery'));
+		wp_enqueue_script('mybxslider', get_bloginfo('template_url'). '/js/mybxslider.js', array('jquery'), false ,true);
 		
 		// IE6-8の場合は、HTML5対応Javascriptを読み込む
 		$agent = getenv('HTTP_USER_AGENT');

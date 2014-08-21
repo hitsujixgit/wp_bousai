@@ -5,7 +5,18 @@
 get_header(); ?>
 <!-- メイン -->
 <div id="content">
-	<img id="frontpage-image" src="<?php echo get_template_directory_uri() ?>/img/sky_2x.jpg" width="900" height="200" />
+	<?php
+		$header_images = get_uploaded_header_images();
+		if ($header_images) {
+			echo '<ul class="bxslider">';
+			foreach ($header_images as $key => $value) {
+				echo '<li><img src="'.$value['url'].'" /></li>';
+			}
+			echo '</ul>';
+		} else {
+			echo '<img id="frontpage-image" src="'.get_template_directory_uri().'/img/sky_2x.jpg" width="900" height="200" />';
+		}
+	?>
 	<div id="main">
 	<?php
 		// boxの中身を出力する（記事タイトル、抜粋、サムネ）無名関数を定義する
