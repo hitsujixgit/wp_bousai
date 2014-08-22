@@ -37,6 +37,7 @@ if( !function_exists('my_custom_image_sizes') ) {
 				'thumbnail_for_2x' => __('高解像度画像 サムネイル'),
 				'medium_for_2x' => __('高解像度画像 中サイズ'),
 				'large_for_2x' => __('高解像度画像 大サイズ'),
+				'full_for_2x' => __('高解像度画像 フルサイズ'),
 		) );
 	}
 }
@@ -67,7 +68,7 @@ if( !function_exists('add_imagesize_for_js_preparation') ) {
 				$key = 'large_for_2x';
 				break;
 			default:
-				return $response;
+				$key = 'full_for_2x';
 		}
 		$response['sizes'] = array_merge($response['sizes'], array($key => array(
 				'width' =>  floor($response['sizes']['full']['width'] / 2),
@@ -86,7 +87,7 @@ if( !function_exists('change_imagesize_tohalf') ) {
 	function change_imagesize_tohalf($html, $id, $alt, $title, $align, $size) {
 		
 		// 高解像度用サイズが選択された場合のみ、widthとheightの値を半分にする
-		if (in_array($size, array('thumbnail_for_2x','medium_for_2x','large_for_2x'))) {
+		if (in_array($size, array('thumbnail_for_2x','medium_for_2x','large_for_2x','full_for_2x'))) {
 			// function image_hwstring (media.php)の仕様に合わせて正規表現でwidthとheightの値をマッチさせる
 			if(preg_match('/^(?<before>.*width=["\'])(?<value>[\d]+)(?<after>["\'].*)$/', $html, $m)) {
 				$val = floor($m['value'] / 2);
